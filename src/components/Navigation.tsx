@@ -112,7 +112,7 @@ export default function Navigation() {
 				<NavbarMenu>
 					<NavbarMenuItem isActive={currentRoute == "/"}>
 						<Link
-							className="text-amber-400 w-full"
+							className="text-amber-400 w-full mt-7"
 							href="/"
 							size="lg"
 						>
