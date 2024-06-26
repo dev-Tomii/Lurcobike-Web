@@ -33,7 +33,7 @@ export default function SliderProducto({ producto }: { producto: string }) {
 	}, []);
 	const productos = obtenerStock(data, producto);
 	return (
-		<div className="container mx-auto my-10 py-10 w-[1000px]">
+		<div className="container mx-auto my-10 py-10 w-[90vw]">
 			<Swiper
 				slidesPerView={1}
 				modules={[Pagination, Navigation]}
