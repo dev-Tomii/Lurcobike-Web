@@ -10,7 +10,7 @@ const montserrat = Montserrat({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Lurcobike web",
-	description: "NextJS + NextUI + TailwindCSS ",
+	description: "Mayoristas en bicicleteria. Marca Argentina",
 };
 
 export default function RootLayout({
