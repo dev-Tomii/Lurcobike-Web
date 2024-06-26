@@ -52,7 +52,7 @@ export default function SliderProducto({ producto }: { producto: string }) {
 										width={1500}
 									></Image>
 									<CardFooter className="absolute bottom-0 z-10 bg-black/30 border-t-1 border-zinc-100/50 flex flex-col justify-center items-center pb-8">
-										<h1 className="text-xl uppercase font-bold text-amber-400">
+										<h1 className="text-base xl:text-xl uppercase font-bold text-amber-400">
 											{producto}
 										</h1>
 										<h2 className="text-tiny font-sm uppercase">
