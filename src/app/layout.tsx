@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import { Providers } from "./provider";
 
@@ -12,6 +12,11 @@ export const metadata: Metadata = {
 	title: "Lurcobike web",
 	description: "Mayoristas en bicicleteria. Marca Argentina",
 };
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1
+}
 
 export default function RootLayout({
 	children,

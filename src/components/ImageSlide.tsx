@@ -14,7 +14,7 @@ export const images = [
 
 export default function ImageSlide() {
 	return (
-		<div className="container mx-auto my-7 w-[1000px] min-h-[11em]">
+		<div className="container mx-auto my-7 w-[90%] min-h-[11em]">
 			<Swiper
 				slidesPerView={1}
 				modules={[Pagination, Autoplay]}

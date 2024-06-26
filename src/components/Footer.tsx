@@ -29,7 +29,7 @@ export default function Footer() {
 						reservados
 					</div>
 				</div>
-				<div className="flex flex-row">
+				<div className="flex flex-row flex-wrap">
 					<div className="flex flex-col font-bold mx-2">
 						<Link className="py-1 text-white text-tiny" href="/">
 							<h3>Inicio</h3>
