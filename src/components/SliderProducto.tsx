@@ -45,7 +45,7 @@ export default function SliderProducto({ producto }: { producto: string }) {
 					productos.map((prod: any, index: any) => (
 						<SwiperSlide key={index}>
 							<div className="flex items-center justify-center">
-								<Card isFooterBlurred className="bg-black/10 h-[20em] xl:h-[50em]">
+								<Card isFooterBlurred className="bg-black/10 h-[15em] xl:h-[50em]">
 									<Image
 										src={prod.src}
 										alt="asd"
