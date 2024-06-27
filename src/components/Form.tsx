@@ -42,36 +42,36 @@ export default function Form() {
 				<form
 					ref={form}
 					onSubmit={sendEmail}
-					className="w-[40em] flex flex-col"
+					className="w-[90vw] flex flex-col justify-center mx-auto items-center"
 				>
-					<div className="form-top flex justify-between">
+					<div className="form-top flex flex-col xl:flex-row justify-between">
 						<Input
 							isRequired
-							className="my-4 mr-2"
+							className="my-4 mx-2 xl:mr-2 w-[90vw] xl:w-[30em]"
 							variant="faded"
 							label="Nombre"
 							name="nombre"
 						/>
 						<Input
 							isRequired
-							className="my-4 ml-2"
+							className="my-4 mx-2 xl:ml-2 w-[90vw] xl:w-[30em]"
 							variant="faded"
 							label="Apellido"
 							name="apellido"
 						/>
 					</div>
-					<div className="form-top flex justify-between">
+					<div className="form-top flex flex-col xl:flex-row justify-between">
 						<Input
                             type="email"
 							isRequired
-							className="my-4 mr-2"
+							className="my-4 mx-2 xl:mr-2 w-[90vw] xl:w-[30em]"
 							variant="faded"
 							label="Email"
 							name="email"
 						/>
 						<Input
 							isRequired
-							className="my-4 ml-2"
+							className="my-4 mx-2 xl:ml-2 w-[90vw] xl:w-[30em]"
 							variant="faded"
 							label="Telefono"
 							name="telefono"
@@ -79,7 +79,7 @@ export default function Form() {
 					</div>
 					<Textarea
 						isRequired
-						className="my-4"
+						className="my-4 w-[90vw] xl:w-[60em]"
 						minRows={6}
 						variant="faded"
 						placeholder="Mensaje / Consulta"
@@ -87,14 +87,14 @@ export default function Form() {
 					/>
 					<Button
 						type="submit"
-						className="justify-center items-center"
+						className="justify-center items-center w-full xl:w-[70em]"
 					>
 						<IoSend /> Enviar
 					</Button>
 				</form>
 			</div>
 			<div className="redes flex justify-center flex-col">
-				<h2 className="font-bold text-3xl uppercase mb-3">
+				<h2 className="font-bold text-3xl uppercase mb-3 text-center">
 					Seguinos en nuestras redes!
 				</h2>
 				<div className="social flex justify-center py-2">
