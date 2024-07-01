@@ -18,6 +18,7 @@ import {
 	Dropdown,
 	DropdownMenu,
 	Divider,
+	Skeleton
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -27,6 +28,8 @@ import icons from "@/lib/icons";
 export default function Navigation() {
 	const [data, setData] = useState([]);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false)
+
 	useEffect(() => {
 		fetch(
 			"https://api.npoint.io/4ad11285abb98dd044e8"
@@ -53,6 +56,7 @@ export default function Navigation() {
 							radius="none"
 							src="/imgs/LogoText.png"
 							width={150}
+							loading="lazy"
 						/>
 					</NavbarBrand>
 				</NavbarContent>

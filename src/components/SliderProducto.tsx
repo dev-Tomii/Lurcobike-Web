@@ -7,7 +7,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
+import { Card, CardFooter, Skeleton } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
 function obtenerStock(data: any, nombre: string) {
@@ -26,10 +26,15 @@ function Stock({ stock }: { stock: boolean }) {
 
 export default function SliderProducto({ producto }: { producto: string }) {
 	const [data, setData] = useState([]);
+	const [isLoaded, setIsLoaded] = useState(false);
+
 	useEffect(() => {
-		fetch("https://api.npoint.io/4ad11285abb98dd044e8") /* https://api.jsonbin.io/v3/b/666afc0ce41b4d34e402c718 */
+		fetch(
+			"https://api.npoint.io/4ad11285abb98dd044e8"
+		) /* https://api.jsonbin.io/v3/b/666afc0ce41b4d34e402c718 */
 			.then((r) => r.json())
-			.then((r) => setData(r)); /* .record */
+			.then((r) => setData(r)) /* .record */
+			.then((r) => setIsLoaded(true));
 	}, []);
 	const productos = obtenerStock(data, producto);
 	return (
@@ -41,11 +46,14 @@ export default function SliderProducto({ producto }: { producto: string }) {
 				pagination={{ clickable: true }}
 				loop={true}
 			>
-				{productos.length > 0 &&
+				{isLoaded &&
 					productos.map((prod: any, index: any) => (
 						<SwiperSlide key={index}>
 							<div className="flex items-center justify-center">
-								<Card isFooterBlurred className="bg-black/10 h-[15em] xl:h-[50em]">
+								<Card
+									isFooterBlurred
+									className="bg-black/10 h-[15em] xl:h-[50em]"
+								>
 									<Image
 										src={prod.src}
 										alt="asd"
@@ -67,13 +75,15 @@ export default function SliderProducto({ producto }: { producto: string }) {
 				{productos.length == 0 && (
 					<SwiperSlide>
 						<div className="flex items-center justify-center">
-							<Card className="bg-black/10">
-								<Image
-									src="/imgs/none.png"
-									alt="asd"
-									width={1500}
-								></Image>
-							</Card>
+							<Skeleton>
+								<Card className="bg-black/10">
+									<Image
+										src="/imgs/none.png"
+										alt="asd"
+										width={1500}
+									></Image>
+								</Card>
+							</Skeleton>
 						</div>
 					</SwiperSlide>
 				)}

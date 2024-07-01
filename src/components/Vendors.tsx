@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/card";
-import { Divider, Link } from "@nextui-org/react";
+import { Divider, Link, Skeleton } from "@nextui-org/react";
 import {
 	Pagination,
 	PaginationItem,
@@ -10,9 +10,9 @@ import {
 
 function maxPag(long: number, perpag: number) {
 	if (long % perpag == 0) {
-		return long / perpag
+		return long / perpag;
 	} else {
-		return Math.trunc(long / perpag) + 1
+		return Math.trunc(long / perpag) + 1;
 	}
 }
 
@@ -26,13 +26,37 @@ export default function Vendors() {
 			.then((r) => r.json())
 			.then((r) => setData(r)); /* .record */
 	}, []);
-	const porPagina = 10
+	const porPagina = 10;
 	const indiceInicio = (currentPage - 1) * porPagina;
 	const indiceFin = indiceInicio + porPagina;
 	return (
 		<>
 			<div className="container flex mx-auto justify-center flex-wrap my-10 py-10 min-h-[31em]">
-				{data.length <= 0 && <div className="p-10 m-10 h-[30em]"></div>}
+				{data.length <= 0 && (
+					<div className="p-10 m-10 h-[30em]">
+						{data.slice(0, 10).map((item, index) => (
+							<Skeleton key={index}>
+								<Card
+									key={index}
+									className="p-3 justify-center mx-3 my-2 w-[15em] h-[15em]"
+								>
+									<CardBody className="text-center items-center justify-center">
+										<h2 className="mb-3">
+											------ <br /> <b>------</b>
+										</h2>
+										<h3>----</h3>
+									</CardBody>
+									<Divider />
+									<CardFooter className="text-center justify-center">
+										<Link className="text-amber-400 underline">
+											--------------------
+										</Link>
+									</CardFooter>
+								</Card>
+							</Skeleton>
+						))}
+					</div>
+				)}
 				{data.length > 0 &&
 					data.slice(indiceInicio, indiceFin).map((item, index) => (
 						<Card
@@ -41,17 +65,18 @@ export default function Vendors() {
 						>
 							<CardBody className="text-center items-center justify-center">
 								<h2 className="mb-3">
-									Bicicleteria <br /> <b>{item['nombreBici']}</b>
+									Bicicleteria <br />{" "}
+									<b>{item["nombreBici"]}</b>
 								</h2>
-								<h3>{item['nombre']}</h3>
+								<h3>{item["nombre"]}</h3>
 							</CardBody>
 							<Divider />
 							<CardFooter className="text-center justify-center">
 								<Link
 									className="text-amber-400 underline"
-									href={item['maps']}
+									href={item["maps"]}
 								>
-									{item['Direccion']}
+									{item["Direccion"]}
 								</Link>
 							</CardFooter>
 						</Card>
