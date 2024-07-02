@@ -12,8 +12,8 @@ export default function Form() {
 		e.preventDefault();
 		
 		emailjs
-			.sendForm("service_lrb2sir", "template_kwfp2me", form.current, {
-				publicKey: "vo9-cCvMEmoExDOjP",
+			.sendForm(process.env.SERVICE_ID as string, process.env.TEMPLATE_ID as string, form.current, {
+				publicKey: process.env.FORM_API as string,
 			})
 			.then(
 				() => {
