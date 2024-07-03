@@ -5,15 +5,15 @@ import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { IoSend } from "react-icons/io5";
 import emailjs from "@emailjs/browser";
 import React, { useRef } from "react";
-
+const env = process.env
 export default function Form() {
 	const form = useRef() as React.MutableRefObject<HTMLFormElement>;
 	const sendEmail = (e: any) => {
 		e.preventDefault();
 		
 		emailjs
-			.sendForm(process.env.SERVICE_ID as string, process.env.TEMPLATE_ID as string, form.current, {
-				publicKey: process.env.FORM_API as string,
+			.sendForm(env.SERVICE_ID as string, env.TEMPLATE_ID as string, form.current, {
+				publicKey: env.FORM_API as string,
 			})
 			.then(
 				() => {
