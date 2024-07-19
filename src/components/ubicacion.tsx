@@ -10,11 +10,11 @@ export default function Ubicacion() {
                 <h2 className="uppercase font-bold text-center xl:text-left text-2xl xl:text-4xl">Venta por mayor<br/><br/></h2>
                 <p className="text-xl mb-3">Av. Jujuy 512, C1229ABN<br/>Cdad. Autónoma de Buenos Aires</p>
             </div>
-			<div className="flex mx-auto justify-center w-[vw]">
+			<div className="flex mx-auto xl:ml-5 justify-center w-[90vw] h-[50vh] xl:w-[40em] xl:h-[40em]">
 				<APIProvider apiKey={process.env.MAPS_API as string}>
 					<Map
 						
-						style={{ width: "40em", height: "40em" }}
+						/* style={{ width: "90vw", height: "80vh" }} */
 						defaultCenter={{
 							lat: -34.616036968713026,
 							lng: -58.40424741801995,
