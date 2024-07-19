@@ -12,7 +12,7 @@ export default function Footer() {
 						radius="none"
 						src="/imgs/LogoText.png"
 						width={150}
-					></Image>
+					/>
 					<div className="socials ml-10 pl-2 mt-3 flex flex-row">
 						<Link className="rounded-full w-[26px] h-[26px] bg-amber-400 mx-1 items-center justify-center" href="https://www.instagram.com/lurco.bike/" isExternal>
 							<FaInstagram color="black" size={16} />
@@ -115,6 +115,13 @@ export default function Footer() {
 							<h3>Bicicletas</h3>
 						</Link>
 					</div>
+					<Image 
+						alt="data-fiscal"
+						radius="none"
+						src="/imgs/data-fiscal.jpg"
+						width={128}
+						className="ml-4 mr-2"
+					/>
 				</div>
 			</footer>
 		</>
